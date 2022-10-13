@@ -1,0 +1,41 @@
+[2022-10-13T21:36:41.506+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: trabalho2.also_run_this manual__2022-10-13T21:34:30.916306+00:00 [queued]>
+[2022-10-13T21:36:41.517+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: trabalho2.also_run_this manual__2022-10-13T21:34:30.916306+00:00 [queued]>
+[2022-10-13T21:36:41.517+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-13T21:36:41.517+0000] {taskinstance.py:1363} INFO - Starting attempt 2 of 2
+[2022-10-13T21:36:41.517+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-13T21:36:41.533+0000] {taskinstance.py:1383} INFO - Executing <Task(BashOperator): also_run_this> on 2022-10-13 21:34:30.916306+00:00
+[2022-10-13T21:36:41.540+0000] {standard_task_runner.py:54} INFO - Started process 218 to run task
+[2022-10-13T21:36:41.542+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'trabalho2', 'also_run_this', 'manual__2022-10-13T21:34:30.916306+00:00', '--job-id', '18', '--raw', '--subdir', 'DAGS_FOLDER/***_titanic.py', '--cfg-path', '/tmp/tmpld2fqas4']
+[2022-10-13T21:36:41.542+0000] {standard_task_runner.py:83} INFO - Job 18: Subtask also_run_this
+[2022-10-13T21:36:41.543+0000] {dagbag.py:525} INFO - Filling up the DagBag from /opt/***/dags/***_titanic.py
+[2022-10-13T21:36:41.566+0000] {logging_mixin.py:117} WARNING - /home/***/.local/lib/python3.7/site-packages/***/models/dag.py:3425 RemovedInAirflow3Warning: Param `schedule_interval` is deprecated and will be removed in a future release. Please use `schedule` instead.
+[2022-10-13T21:36:41.725+0000] {task_command.py:384} INFO - Running <TaskInstance: trabalho2.also_run_this manual__2022-10-13T21:34:30.916306+00:00 [running]> on host c9b79e9a952c
+[2022-10-13T21:36:41.781+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Marcos Vieira
+AIRFLOW_CTX_DAG_ID=trabalho2
+AIRFLOW_CTX_TASK_ID=also_run_this
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-13T21:34:30.916306+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-10-13T21:34:30.916306+00:00
+[2022-10-13T21:36:41.782+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2022-10-13T21:36:41.782+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'curl -L -o/opt/***_data/data/titanic.csv https://raw.githubusercontent.com/neylsoncrepalde/titanic_data_with_semicolon/main/titanic.csv']
+[2022-10-13T21:36:41.792+0000] {subprocess.py:86} INFO - Output:
+[2022-10-13T21:36:41.798+0000] {subprocess.py:93} INFO -   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+[2022-10-13T21:36:41.799+0000] {subprocess.py:93} INFO -                                  Dload  Upload   Total   Spent    Left  Speed
+[2022-10-13T21:36:41.831+0000] {subprocess.py:93} INFO -   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0Warning: Failed to create the file /opt/***_data/data/titanic.csv:
+[2022-10-13T21:36:41.831+0000] {subprocess.py:93} INFO - Warning: Permission denied
+[2022-10-13T21:36:41.831+0000] {subprocess.py:93} INFO -   2 60326    2  1369    0     0  42781      0  0:00:01 --:--:--  0:00:01 42781
+[2022-10-13T21:36:41.831+0000] {subprocess.py:93} INFO - curl: (23) Failure writing output to destination
+[2022-10-13T21:36:41.833+0000] {subprocess.py:97} INFO - Command exited with return code 23
+[2022-10-13T21:36:41.848+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 197, in execute
+    f'Bash command failed. The command returned a non-zero exit code {result.exit_code}.'
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 23.
+[2022-10-13T21:36:41.853+0000] {taskinstance.py:1406} INFO - Marking task as FAILED. dag_id=trabalho2, task_id=also_run_this, execution_date=20221013T213430, start_date=20221013T213641, end_date=20221013T213641
+[2022-10-13T21:36:41.866+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 18 for task also_run_this (Bash command failed. The command returned a non-zero exit code 23.; 218)
+[2022-10-13T21:36:41.914+0000] {local_task_job.py:164} INFO - Task exited with return code 1
+[2022-10-13T21:36:41.946+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

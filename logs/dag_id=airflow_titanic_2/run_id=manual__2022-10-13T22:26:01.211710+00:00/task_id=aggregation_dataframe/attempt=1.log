@@ -1,0 +1,48 @@
+[2022-10-13T22:26:02.706+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: airflow_titanic_2.aggregation_dataframe manual__2022-10-13T22:26:01.211710+00:00 [queued]>
+[2022-10-13T22:26:02.716+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: airflow_titanic_2.aggregation_dataframe manual__2022-10-13T22:26:01.211710+00:00 [queued]>
+[2022-10-13T22:26:02.716+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-13T22:26:02.716+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2022-10-13T22:26:02.716+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-13T22:26:02.728+0000] {taskinstance.py:1383} INFO - Executing <Task(_PythonDecoratedOperator): aggregation_dataframe> on 2022-10-13 22:26:01.211710+00:00
+[2022-10-13T22:26:02.734+0000] {standard_task_runner.py:54} INFO - Started process 20874 to run task
+[2022-10-13T22:26:02.736+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', '***_titanic_2', 'aggregation_dataframe', 'manual__2022-10-13T22:26:01.211710+00:00', '--job-id', '40', '--raw', '--subdir', 'DAGS_FOLDER/***_titanic_2.py', '--cfg-path', '/tmp/tmp27notfzb']
+[2022-10-13T22:26:02.737+0000] {standard_task_runner.py:83} INFO - Job 40: Subtask aggregation_dataframe
+[2022-10-13T22:26:02.737+0000] {dagbag.py:525} INFO - Filling up the DagBag from /opt/***/dags/***_titanic_2.py
+[2022-10-13T22:26:02.882+0000] {logging_mixin.py:117} WARNING - /home/***/.local/lib/python3.7/site-packages/***/models/dag.py:3425 RemovedInAirflow3Warning: Param `schedule_interval` is deprecated and will be removed in a future release. Please use `schedule` instead.
+[2022-10-13T22:26:06.694+0000] {task_command.py:384} INFO - Running <TaskInstance: airflow_titanic_2.aggregation_dataframe manual__2022-10-13T22:26:01.211710+00:00 [running]> on host 708a74060eb9
+[2022-10-13T22:26:06.757+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Marcos Vieira
+AIRFLOW_CTX_DAG_ID=***_titanic_2
+AIRFLOW_CTX_TASK_ID=aggregation_dataframe
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-13T22:26:01.211710+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-10-13T22:26:01.211710+00:00
+[2022-10-13T22:26:10.871+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/decorators/base.py", line 188, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 193, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/airflow_titanic_2.py", line 40, in aggregation_dataframe
+    f.mean('SibSp + Parch').alias('SibSp + Parch')
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/sql/group.py", line 137, in agg
+    jdf = self._jgd.agg(exprs[0]._jc, _to_seq(self.session._sc, [c._jc for c in exprs[1:]]))
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/java_gateway.py", line 1322, in __call__
+    answer, self.gateway_client, self.target_id, self.name)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/sql/utils.py", line 196, in deco
+    raise converted from None
+pyspark.sql.utils.AnalysisException: Column 'Contagem' does not exist. Did you mean one of the following? [female,3,144,16.118809722222224,144];
+'Aggregate ['Contagem, 'Tarifa, 'SibSp + Parch], ['Contagem, 'Tarifa, 'SibSp + Parch, avg('Contagem) AS Contagem#21, avg('Tarifa) AS Tarifa#23, avg('SibSp + Parch) AS SibSp + Parch#25]
++- Relation [female,3,144,16.118809722222224,144#17] csv
+
+[2022-10-13T22:26:10.883+0000] {taskinstance.py:1406} INFO - Marking task as FAILED. dag_id=***_titanic_2, task_id=aggregation_dataframe, execution_date=20221013T222601, start_date=20221013T222602, end_date=20221013T222610
+[2022-10-13T22:26:10.893+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 40 for task aggregation_dataframe (Column 'Contagem' does not exist. Did you mean one of the following? [female,3,144,16.118809722222224,144];
+'Aggregate ['Contagem, 'Tarifa, 'SibSp + Parch], ['Contagem, 'Tarifa, 'SibSp + Parch, avg('Contagem) AS Contagem#21, avg('Tarifa) AS Tarifa#23, avg('SibSp + Parch) AS SibSp + Parch#25]
++- Relation [female,3,144,16.118809722222224,144#17] csv
+; 20874)
+[2022-10-13T22:26:10.924+0000] {local_task_job.py:164} INFO - Task exited with return code 1
+[2022-10-13T22:26:10.956+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

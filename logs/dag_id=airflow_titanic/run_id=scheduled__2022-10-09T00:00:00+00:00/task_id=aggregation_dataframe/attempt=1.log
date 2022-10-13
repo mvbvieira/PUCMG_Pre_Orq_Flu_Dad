@@ -1,0 +1,82 @@
+[2022-10-13T22:11:10.896+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: airflow_titanic.aggregation_dataframe scheduled__2022-10-09T00:00:00+00:00 [queued]>
+[2022-10-13T22:11:10.904+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: airflow_titanic.aggregation_dataframe scheduled__2022-10-09T00:00:00+00:00 [queued]>
+[2022-10-13T22:11:10.904+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-13T22:11:10.904+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2022-10-13T22:11:10.904+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-13T22:11:10.918+0000] {taskinstance.py:1383} INFO - Executing <Task(_PythonDecoratedOperator): aggregation_dataframe> on 2022-10-09 00:00:00+00:00
+[2022-10-13T22:11:10.925+0000] {standard_task_runner.py:54} INFO - Started process 10819 to run task
+[2022-10-13T22:11:10.927+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', '***_titanic', 'aggregation_dataframe', 'scheduled__2022-10-09T00:00:00+00:00', '--job-id', '33', '--raw', '--subdir', 'DAGS_FOLDER/***_titanic.py', '--cfg-path', '/tmp/tmp6_kf70wk']
+[2022-10-13T22:11:10.928+0000] {standard_task_runner.py:83} INFO - Job 33: Subtask aggregation_dataframe
+[2022-10-13T22:11:10.929+0000] {dagbag.py:525} INFO - Filling up the DagBag from /opt/***/dags/***_titanic.py
+[2022-10-13T22:11:11.095+0000] {logging_mixin.py:117} WARNING - /home/***/.local/lib/python3.7/site-packages/***/models/dag.py:3425 RemovedInAirflow3Warning: Param `schedule_interval` is deprecated and will be removed in a future release. Please use `schedule` instead.
+[2022-10-13T22:11:14.104+0000] {task_command.py:384} INFO - Running <TaskInstance: airflow_titanic.aggregation_dataframe scheduled__2022-10-09T00:00:00+00:00 [running]> on host 708a74060eb9
+[2022-10-13T22:11:14.209+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Marcos Vieira
+AIRFLOW_CTX_DAG_ID=***_titanic
+AIRFLOW_CTX_TASK_ID=aggregation_dataframe
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-09T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-10-09T00:00:00+00:00
+[2022-10-13T22:11:18.789+0000] {logging_mixin.py:117} INFO - +------+------+--------+
+|   Sex|Pclass|Contagem|
++------+------+--------+
+|female|     3|     144|
+|  male|     2|     108|
+|female|     1|      94|
+|  male|     1|     122|
+|  male|     3|     347|
+|female|     2|      76|
++------+------+--------+
+[2022-10-13T22:11:19.130+0000] {logging_mixin.py:117} INFO - +------+------+------------------+
+|   Sex|Pclass|            Tarifa|
++------+------+------------------+
+|female|     3|16.118809722222224|
+|  male|     2| 19.74178240740741|
+|female|     1|106.12579787234041|
+|  male|     1| 67.22612704918033|
+|  male|     3|12.661632564841513|
+|female|     2| 21.97012105263158|
++------+------+------------------+
+[2022-10-13T22:11:19.387+0000] {logging_mixin.py:117} INFO - +------+------+-------------+
+|   Sex|Pclass|SibSp + Parch|
++------+------+-------------+
+|female|     3|          144|
+|  male|     2|          108|
+|female|     1|           94|
+|  male|     1|          122|
+|  male|     3|          347|
+|female|     2|           76|
++------+------+-------------+
+[2022-10-13T22:11:19.701+0000] {logging_mixin.py:117} INFO - +------+------+--------+------------------+-------------+
+|   Sex|Pclass|Contagem|            Tarifa|SibSp + Parch|
++------+------+--------+------------------+-------------+
+|female|     3|     144|16.118809722222224|          144|
+|  male|     2|     108| 19.74178240740741|          108|
+|female|     1|      94|106.12579787234041|           94|
+|  male|     1|     122| 67.22612704918033|          122|
+|  male|     3|     347|12.661632564841513|          347|
+|female|     2|      76| 21.97012105263158|           76|
++------+------+--------+------------------+-------------+
+[2022-10-13T22:11:19.779+0000] {taskinstance.py:1851} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/decorators/base.py", line 188, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 175, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 193, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/airflow_titanic.py", line 79, in aggregation_dataframe
+    df_aggregation.write.format("csv").save(TARGET_DIR + "tabela_unica.csv")
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/sql/readwriter.py", line 968, in save
+    self._jwrite.save(path)
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/java_gateway.py", line 1322, in __call__
+    answer, self.gateway_client, self.target_id, self.name)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/sql/utils.py", line 196, in deco
+    raise converted from None
+pyspark.sql.utils.AnalysisException: path file:/opt/storage_data/data/tabela_unica.csv already exists.
+[2022-10-13T22:11:19.795+0000] {taskinstance.py:1406} INFO - Marking task as FAILED. dag_id=***_titanic, task_id=aggregation_dataframe, execution_date=20221009T000000, start_date=20221013T221110, end_date=20221013T221119
+[2022-10-13T22:11:19.808+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 33 for task aggregation_dataframe (path file:/opt/storage_data/data/tabela_unica.csv already exists.; 10819)
+[2022-10-13T22:11:19.859+0000] {local_task_job.py:164} INFO - Task exited with return code 1
+[2022-10-13T22:11:19.894+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

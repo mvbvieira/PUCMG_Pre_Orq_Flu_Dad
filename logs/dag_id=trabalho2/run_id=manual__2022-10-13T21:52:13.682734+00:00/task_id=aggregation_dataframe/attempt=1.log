@@ -1,0 +1,50 @@
+[2022-10-13T21:52:20.505+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: trabalho2.aggregation_dataframe manual__2022-10-13T21:52:13.682734+00:00 [queued]>
+[2022-10-13T21:52:20.512+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: trabalho2.aggregation_dataframe manual__2022-10-13T21:52:13.682734+00:00 [queued]>
+[2022-10-13T21:52:20.513+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-13T21:52:20.513+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2022-10-13T21:52:20.513+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-13T21:52:20.526+0000] {taskinstance.py:1383} INFO - Executing <Task(_PythonDecoratedOperator): aggregation_dataframe> on 2022-10-13 21:52:13.682734+00:00
+[2022-10-13T21:52:20.532+0000] {standard_task_runner.py:54} INFO - Started process 2411 to run task
+[2022-10-13T21:52:20.534+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'trabalho2', 'aggregation_dataframe', 'manual__2022-10-13T21:52:13.682734+00:00', '--job-id', '24', '--raw', '--subdir', 'DAGS_FOLDER/***_titanic.py', '--cfg-path', '/tmp/tmplj9r5p4j']
+[2022-10-13T21:52:20.535+0000] {standard_task_runner.py:83} INFO - Job 24: Subtask aggregation_dataframe
+[2022-10-13T21:52:20.535+0000] {dagbag.py:525} INFO - Filling up the DagBag from /opt/***/dags/***_titanic.py
+[2022-10-13T21:52:20.705+0000] {logging_mixin.py:117} WARNING - /home/***/.local/lib/python3.7/site-packages/***/models/dag.py:3425 RemovedInAirflow3Warning: Param `schedule_interval` is deprecated and will be removed in a future release. Please use `schedule` instead.
+[2022-10-13T21:52:24.268+0000] {task_command.py:384} INFO - Running <TaskInstance: trabalho2.aggregation_dataframe manual__2022-10-13T21:52:13.682734+00:00 [running]> on host 708a74060eb9
+[2022-10-13T21:52:24.332+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Marcos Vieira
+AIRFLOW_CTX_DAG_ID=trabalho2
+AIRFLOW_CTX_TASK_ID=aggregation_dataframe
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-13T21:52:13.682734+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-10-13T21:52:13.682734+00:00
+[2022-10-13T21:52:28.567+0000] {logging_mixin.py:117} INFO - +-----------+--------+------+--------------------+------+----+-----+-----+----------------+-------+-----+--------+
+|PassengerId|Survived|Pclass|                Name|   Sex| Age|SibSp|Parch|          Ticket|   Fare|Cabin|Embarked|
++-----------+--------+------+--------------------+------+----+-----+-----+----------------+-------+-----+--------+
+|          1|       0|     3|Braund, Mr. Owen ...|  male|22.0|    1|    0|       A/5 21171|   7.25| null|       S|
+|          2|       1|     1|Cumings, Mrs. Joh...|female|38.0|    1|    0|        PC 17599|71.2833|  C85|       C|
+|          3|       1|     3|Heikkinen, Miss. ...|female|26.0|    0|    0|STON/O2. 3101282|  7.925| null|       S|
+|          4|       1|     1|Futrelle, Mrs. Ja...|female|35.0|    1|    0|          113803|   53.1| C123|       S|
+|          5|       0|     3|Allen, Mr. Willia...|  male|35.0|    0|    0|          373450|   8.05| null|       S|
+|          6|       0|     3|    Moran, Mr. James|  male|null|    0|    0|          330877| 8.4583| null|       Q|
+|          7|       0|     1|McCarthy, Mr. Tim...|  male|54.0|    0|    0|           17463|51.8625|  E46|       S|
+|          8|       0|     3|Palsson, Master. ...|  male| 2.0|    3|    1|          349909| 21.075| null|       S|
+|          9|       1|     3|Johnson, Mrs. Osc...|female|27.0|    0|    2|          347742|11.1333| null|       S|
+|         10|       1|     2|Nasser, Mrs. Nich...|female|14.0|    1|    0|          237736|30.0708| null|       C|
+|         11|       1|     3|Sandstrom, Miss. ...|female| 4.0|    1|    1|         PP 9549|   16.7|   G6|       S|
+|         12|       1|     1|Bonnell, Miss. El...|female|58.0|    0|    0|          113783|  26.55| C103|       S|
+|         13|       0|     3|Saundercock, Mr. ...|  male|20.0|    0|    0|       A/5. 2151|   8.05| null|       S|
+|         14|       0|     3|Andersson, Mr. An...|  male|39.0|    1|    5|          347082| 31.275| null|       S|
+|         15|       0|     3|Vestrom, Miss. Hu...|female|14.0|    0|    0|          350406| 7.8542| null|       S|
+|         16|       1|     2|Hewlett, Mrs. (Ma...|female|55.0|    0|    0|          248706|   16.0| null|       S|
+|         17|       0|     3|Rice, Master. Eugene|  male| 2.0|    4|    1|          382652| 29.125| null|       Q|
+|         18|       1|     2|Williams, Mr. Cha...|  male|null|    0|    0|          244373|   13.0| null|       S|
+|         19|       0|     3|Vander Planke, Mr...|female|31.0|    1|    0|          345763|   18.0| null|       S|
+|         20|       1|     3|Masselmani, Mrs. ...|female|null|    0|    0|            2649|  7.225| null|       C|
++-----------+--------+------+--------------------+------+----+-----+-----+----------------+-------+-----+--------+
+only showing top 20 rows
+[2022-10-13T21:52:28.568+0000] {python.py:177} INFO - Done. Returned value was: None
+[2022-10-13T21:52:28.578+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=trabalho2, task_id=aggregation_dataframe, execution_date=20221013T215213, start_date=20221013T215220, end_date=20221013T215228
+[2022-10-13T21:52:28.616+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2022-10-13T21:52:28.647+0000] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,33 @@
+[2022-10-13T21:52:15.307+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: trabalho2.also_run_this manual__2022-10-13T21:52:13.682734+00:00 [queued]>
+[2022-10-13T21:52:15.318+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: trabalho2.also_run_this manual__2022-10-13T21:52:13.682734+00:00 [queued]>
+[2022-10-13T21:52:15.318+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-13T21:52:15.318+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2022-10-13T21:52:15.318+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-13T21:52:15.330+0000] {taskinstance.py:1383} INFO - Executing <Task(BashOperator): also_run_this> on 2022-10-13 21:52:13.682734+00:00
+[2022-10-13T21:52:15.335+0000] {standard_task_runner.py:54} INFO - Started process 2258 to run task
+[2022-10-13T21:52:15.337+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'trabalho2', 'also_run_this', 'manual__2022-10-13T21:52:13.682734+00:00', '--job-id', '23', '--raw', '--subdir', 'DAGS_FOLDER/***_titanic.py', '--cfg-path', '/tmp/tmpz26ba68f']
+[2022-10-13T21:52:15.338+0000] {standard_task_runner.py:83} INFO - Job 23: Subtask also_run_this
+[2022-10-13T21:52:15.339+0000] {dagbag.py:525} INFO - Filling up the DagBag from /opt/***/dags/***_titanic.py
+[2022-10-13T21:52:15.529+0000] {logging_mixin.py:117} WARNING - /home/***/.local/lib/python3.7/site-packages/***/models/dag.py:3425 RemovedInAirflow3Warning: Param `schedule_interval` is deprecated and will be removed in a future release. Please use `schedule` instead.
+[2022-10-13T21:52:19.549+0000] {task_command.py:384} INFO - Running <TaskInstance: trabalho2.also_run_this manual__2022-10-13T21:52:13.682734+00:00 [running]> on host 708a74060eb9
+[2022-10-13T21:52:19.615+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Marcos Vieira
+AIRFLOW_CTX_DAG_ID=trabalho2
+AIRFLOW_CTX_TASK_ID=also_run_this
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-13T21:52:13.682734+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-10-13T21:52:13.682734+00:00
+[2022-10-13T21:52:19.616+0000] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2022-10-13T21:52:19.617+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'curl -L -o/opt/storage_data/data/titanic.csv https://raw.githubusercontent.com/neylsoncrepalde/titanic_data_with_semicolon/main/titanic.csv']
+[2022-10-13T21:52:19.625+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2022-10-13T21:52:19.635+0000] {subprocess.py:86} INFO - Output:
+[2022-10-13T21:52:19.642+0000] {subprocess.py:93} INFO -   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+[2022-10-13T21:52:19.642+0000] {subprocess.py:93} INFO -                                  Dload  Upload   Total   Spent    Left  Speed
+[2022-10-13T21:52:19.906+0000] {subprocess.py:93} INFO -   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 60326  100 60326    0     0   223k      0 --:--:-- --:--:-- --:--:--  223k
+[2022-10-13T21:52:19.908+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2022-10-13T21:52:19.933+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=trabalho2, task_id=also_run_this, execution_date=20221013T215213, start_date=20221013T215215, end_date=20221013T215219
+[2022-10-13T21:52:19.981+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2022-10-13T21:52:20.011+0000] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,55 @@
+[2022-10-13T22:04:11.127+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: trabalho2.aggregation_dataframe manual__2022-10-13T22:04:03.134665+00:00 [queued]>
+[2022-10-13T22:04:11.136+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: trabalho2.aggregation_dataframe manual__2022-10-13T22:04:03.134665+00:00 [queued]>
+[2022-10-13T22:04:11.136+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-13T22:04:11.136+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 1
+[2022-10-13T22:04:11.136+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2022-10-13T22:04:11.148+0000] {taskinstance.py:1383} INFO - Executing <Task(_PythonDecoratedOperator): aggregation_dataframe> on 2022-10-13 22:04:03.134665+00:00
+[2022-10-13T22:04:11.155+0000] {standard_task_runner.py:54} INFO - Started process 7055 to run task
+[2022-10-13T22:04:11.156+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'trabalho2', 'aggregation_dataframe', 'manual__2022-10-13T22:04:03.134665+00:00', '--job-id', '28', '--raw', '--subdir', 'DAGS_FOLDER/***_titanic.py', '--cfg-path', '/tmp/tmp06ptbtka']
+[2022-10-13T22:04:11.157+0000] {standard_task_runner.py:83} INFO - Job 28: Subtask aggregation_dataframe
+[2022-10-13T22:04:11.158+0000] {dagbag.py:525} INFO - Filling up the DagBag from /opt/***/dags/***_titanic.py
+[2022-10-13T22:04:11.318+0000] {logging_mixin.py:117} WARNING - /home/***/.local/lib/python3.7/site-packages/***/models/dag.py:3425 RemovedInAirflow3Warning: Param `schedule_interval` is deprecated and will be removed in a future release. Please use `schedule` instead.
+[2022-10-13T22:04:14.406+0000] {task_command.py:384} INFO - Running <TaskInstance: trabalho2.aggregation_dataframe manual__2022-10-13T22:04:03.134665+00:00 [running]> on host 708a74060eb9
+[2022-10-13T22:04:14.473+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Marcos Vieira
+AIRFLOW_CTX_DAG_ID=trabalho2
+AIRFLOW_CTX_TASK_ID=aggregation_dataframe
+AIRFLOW_CTX_EXECUTION_DATE=2022-10-13T22:04:03.134665+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-10-13T22:04:03.134665+00:00
+[2022-10-13T22:04:20.474+0000] {logging_mixin.py:117} INFO - +------+------+--------+
+|   Sex|Pclass|Contagem|
++------+------+--------+
+|female|     3|     144|
+|  male|     2|     108|
+|female|     1|      94|
+|  male|     1|     122|
+|  male|     3|     347|
+|female|     2|      76|
++------+------+--------+
+[2022-10-13T22:04:20.928+0000] {logging_mixin.py:117} INFO - +------+------+------------------+
+|   Sex|Pclass|            Tarifa|
++------+------+------------------+
+|female|     3|16.118809722222224|
+|  male|     2| 19.74178240740741|
+|female|     1|106.12579787234041|
+|  male|     1| 67.22612704918033|
+|  male|     3|12.661632564841513|
+|female|     2| 21.97012105263158|
++------+------+------------------+
+[2022-10-13T22:04:21.295+0000] {logging_mixin.py:117} INFO - +------+------+-------------+
+|   Sex|Pclass|SibSp + Parch|
++------+------+-------------+
+|female|     3|          144|
+|  male|     2|          108|
+|female|     1|           94|
+|  male|     1|          122|
+|  male|     3|          347|
+|female|     2|           76|
++------+------+-------------+
+[2022-10-13T22:04:21.296+0000] {python.py:177} INFO - Done. Returned value was: None
+[2022-10-13T22:04:21.312+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=trabalho2, task_id=aggregation_dataframe, execution_date=20221013T220403, start_date=20221013T220411, end_date=20221013T220421
+[2022-10-13T22:04:21.349+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2022-10-13T22:04:21.392+0000] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check
